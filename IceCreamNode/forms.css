@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Yantramanav');
+{
+	display: block;
+	vertical-align: top
+}
+
+
+header{
+	text-align:center;
+	font-family: 'Lobster', cursive;
+	float: left;
+    width: 100%;
+    margin-bottom:10px;
+}
+
+body{
+	font-family: 'Yantramanav', sans-serif;
+    margin: 4%;
+	
+}
+
+legend{
+	font-size:24px;
+}
+aside legend{
+	font-size:20px;
+}
+
+header img{
+	height: 50px;
+}
+
+
+input[type="radio"] {
+	display: inline;
+}
+
+
+label::after {
+	content:"";
+	display: block;
+}
+
+head {
+	display: none;
+}
+input:invalid {
+	background: #fe8181;
+}
+input:valid {
+	background: white;
+}
+input:required {
+	background: #c0c0c0;
+}
+
+svg, figure, button, option {
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+}
+
+#main{
+	float:left;
+	width:30%;
+	margin-right:2%;
+}
+
+aside{
+	float:left;
+	width:35%;
+	font-size:15px;
+	
+}
+
+#main fieldset, aside fieldset {
+	margin-bottom:15px;
+	padding:15px;
+	
+	
+}
+#main fieldset{
+	border-color: lightblue;
+	border-width:4px;
+	border-style: double;
+}
+
+aside fieldset{
+	border-color:#eeeeee;
+	
+}
+
+#flavors select, #flavors input{
+	display:inline;
+}
+
+/*Buttons*/
+button{ 
+	width: 100px;
+    height: 30px;
+    display:block;
+	margin:auto;
+	margin-top:15px;
+	border: none;
+    background-color: rgba(173, 216, 230, 0.75);
+    font-weight:bold;
+    
+}
+
+button:hover{
+	border:2px  solid white;
+}
+
+#check{
+	background-Color: rgba(76, 212, 142, 0.75);
+    border: none;
+    display:inline;
+    margin-right: 40px;
+}
+    
+    
+}
+
+#check:hover{ 
+	border:2px  solid white;
+}
+
+#checkImg {
+	display:none;
+	margin: -8px;
+
+    height: 22px;
+   
+}
+
+
+#toppings label{
+	display:inline;
+}
+
+#container label{
+	display:inline;
+}
+
+#address {
+	line-height: 1.5em;
+}
+#address input{
+	float:right;
+}
+select, number, checkbox, radio {
+	display:block;
+	
+}
+
+span {
+	font-size:20px;
+
+}
+
