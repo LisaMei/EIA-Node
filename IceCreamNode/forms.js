@@ -281,7 +281,7 @@ var Form;
             let numberInput = document.createElement("input");
             numberInput.type = "number";
             numberInput.id = flavors[i];
-            numberInput.name = "numberInput";
+            numberInput.name = flavors[i];
             numberInput.step = "1";
             numberInput.min = "1";
             numberInput.max = "5";

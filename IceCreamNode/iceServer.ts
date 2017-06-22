@@ -44,6 +44,8 @@ function handleRequest(_request: http.IncomingMessage, _response: http.ServerRes
     _response.write("Postal Code: " + query["PostalCode"]+  "<br>");
      _response.write("Town/City: " + query["Town/City"]+  "<br>");
     _response.write("Postal Code: " + query["PostalCode"]+  "<br>");
+    _response.write("Selection: " + query["numberInput"]+  "<br>");
+    
     _response.end();
    
     

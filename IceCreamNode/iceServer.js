@@ -32,6 +32,7 @@ function handleRequest(_request, _response) {
     _response.write("Postal Code: " + query["PostalCode"] + "<br>");
     _response.write("Town/City: " + query["Town/City"] + "<br>");
     _response.write("Postal Code: " + query["PostalCode"] + "<br>");
+    _response.write("Selection: " + query["numberInput"] + "<br>");
     _response.end();
     switch (command) {
         case "insert":
