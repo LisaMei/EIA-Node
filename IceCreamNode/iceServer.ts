@@ -42,7 +42,13 @@ function handleRequest(_request: http.IncomingMessage, _response: http.ServerRes
     _response.write("Address Line 2: " + query["AddressLine2"]+  "<br>");
     _response.write("Town/City: " + query["Town/City"]+  "<br>");
     _response.write("Postal Code: " + query["PostalCode"]+  "<br>");
-    _response.write("Selection: " + query["Chocolate"]+  "<br>");
+    _response.write("Chocolate: " + query["Chocolate"]+  "<br>");
+    _response.write("Strawberry: " + query["Strawberry"]+  "<br>");
+    _response.write("Vanilla: " + query["Vanilla"]+  "<br>");
+    _response.write("Cinnamon: " + query["Cinnamon"]+  "<br>");
+    _response.write("Lemon: " + query["Lemon"]+  "<br>");
+     _response.write("Stracciatella: " + query["Stracciatella"]+  "<br>");
+    _response.write("Walnut: " + query["Walnut"]+  "<br>");
     _response.end();
    
     
