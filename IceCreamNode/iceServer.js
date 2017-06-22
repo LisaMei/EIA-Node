@@ -1,6 +1,8 @@
+//manages between client and database
 "use strict";
 const http = require("http");
 const url = require("url");
+const Database = require("./Database");
 let port = process.env.PORT;
 if (port == undefined)
     port = 8100;
@@ -16,9 +18,28 @@ function handleRequest(_request, _response) {
     console.log(_request.url);
     let query = url.parse(_request.url, true).query;
     console.log(query);
+    var command = query["command"];
     let key;
     for (key in query)
         console.log(key + ":" + query[key]);
+    switch (command) {
+        case "insert":
+            let iceRequest = {
+                nr: parseInt(query["numberInput"]),
+                selection: query["firstname"],
+            };
+            Database.insert(iceRequest);
+            respond(_response, "storing data");
+            break;
+        case "find":
+            Database.findAll(function (json) {
+                respond(_response, json);
+            });
+            break;
+        default:
+            respond(_response, "unknown command: " + command);
+            break;
+    }
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.write("First Name: " + query["FirstName"] + "<br>");
@@ -34,5 +55,11 @@ function handleRequest(_request, _response) {
         nr: parseInt(url.parse(_request.url, true).query["nr"]),
         selection: url.parse(_request.url, true).query["selection"]
     };
+}
+function respond(_response, _text) {
+    _response.setHeader("Access-Control-Allow-Origin", "*");
+    _response.setHeader("content-type", "text/html; charset=utf-8");
+    _response.write(_text);
+    _response.end();
 }
 //# sourceMappingURL=iceServer.js.map
