@@ -92,8 +92,9 @@ var Form;
             for (let i = 0; i < numberFields.length; i++) {
                 let valueString = numberFields[i].value;
                 scoopNumber += parseInt(valueString);
-                //                if (parseInt(numberFields[i].value) > 0) {
-                outputField.innerHTML += numberFields[i].id + ": " + numberFields[i].value + "<br>";
+                if (parseInt(numberFields[i].value) > 0) {
+                    outputField.innerHTML += numberFields[i].id + ": " + numberFields[i].value + "<br>";
+                }
             }
             calculatePrice();
         }
