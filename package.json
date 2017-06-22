@@ -1,15 +1,16 @@
 {
-	"name" : "NodeTest",
-	"version" : "0.0.0",
-	"description" : "enter a description of the project here",
-	"author" : "enter your name here",
-	"main" : "filename-of-main-script.js",
-	"scripts" : {
-		"start" : "node NodeTest.js"
+	"name": "iceServer",
+	"version": "0.0.0",
+	"description": "enter a description of the project here",
+	"author": "Lisa Meister",
+	"main": "filename-of-main-script.js",
+	"scripts": {
+		"start": "node iceServer.js"
 	},
-	"engines" : {
-		"node" : "5.8.0"
+	"engines": {
+		"node": "5.8.0"
 	},
-	"dependencies" : {
+	"dependencies": {
+		
 	}
 }
