@@ -22,7 +22,13 @@ function handleRequest(_request, _response) {
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.write("First Name: " + query["FirstName"] + "<br>");
-    _response.write("Last Name: " + query["LastName"]);
+    _response.write("Last Name: " + query["LastName"] + "<br>");
+    _response.write("Address Line 1: " + query["AddressLine1"] + "<br>");
+    _response.write("Address Line 2: " + query["AddressLine2"] + "<br>");
+    _response.write("Town/City: " + query["Town/City"] + "<br>");
+    _response.write("Postal Code: " + query["PostalCode"] + "<br>");
+    _response.write("Town/City: " + query["Town/City"] + "<br>");
+    _response.write("Postal Code: " + query["PostalCode"] + "<br>");
     _response.end();
     let data = {
         nr: parseInt(url.parse(_request.url, true).query["nr"]),
