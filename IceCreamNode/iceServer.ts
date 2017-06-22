@@ -33,7 +33,7 @@ function handleRequest(_request: http.IncomingMessage, _response: http.ServerRes
     let key: string;
     for (key in query)
         console.log(key + ":" + query[key]);
-    
+  /*  
      _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.write("First Name: " + query["FirstName"] +  "<br>");
@@ -45,7 +45,8 @@ function handleRequest(_request: http.IncomingMessage, _response: http.ServerRes
      _response.write("Town/City: " + query["Town/City"]+  "<br>");
     _response.write("Postal Code: " + query["PostalCode"]+  "<br>");
     _response.write("Selection: " + query["numberInput"]+  "<br>");
-    
+    */
+    _response.write("Hallo Welt");
     _response.end();
    
     
@@ -69,8 +70,6 @@ function handleRequest(_request: http.IncomingMessage, _response: http.ServerRes
             respond(_response, "unknown command: " + command);
             break;
     }
-
-
 
    
     let data: iceData = {
