@@ -3,9 +3,8 @@
 	"version": "0.0.0",
 	"description": "enter a description of the project here",
 	"author": "Lisa Meister",
-	"main": "filename-of-main-script.js",
 	"scripts": {
-		"start": "node iceServer.js"
+		"start": "node IceCreamNode/iceServer.js"
 	},
 	"engines": {
 		"node": "5.8.0"
