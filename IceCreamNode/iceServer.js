@@ -1,7 +1,7 @@
 //manages between client and database
 "use strict";
 const http = require("http");
-const url = require("url");
+const Url = require("url");
 let port = process.env.PORT;
 if (port == undefined)
     port = 8100;
@@ -9,13 +9,15 @@ let server = http.createServer();
 server.addListener("listening", handleListen);
 server.addListener("request", handleRequest);
 server.listen(port);
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/mydb";
 function handleListen() {
     console.log("Server listening on port: " + process.env.port);
 }
 function handleRequest(_request, _response) {
     console.log("Request recieved");
     console.log(_request.url);
-    let query = url.parse(_request.url, true).query;
+    let query = Url.parse(_request.url, true).query;
     console.log(query);
     var command = query["command"];
     let key;
@@ -58,8 +60,8 @@ function handleRequest(_request, _response) {
             break;
     }*/
     let data = {
-        nr: parseInt(url.parse(_request.url, true).query["nr"]),
-        selection: url.parse(_request.url, true).query["selection"]
+        nr: parseInt(Url.parse(_request.url, true).query["nr"]),
+        selection: Url.parse(_request.url, true).query["selection"]
     };
 }
 function respond(_response, _text) {

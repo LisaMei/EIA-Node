@@ -111,9 +111,9 @@ namespace Form {
                 let valueString: string = numberFields[i].value;
                 scoopNumber += parseInt(valueString);
 
-                if (parseInt(numberFields[i].value) > 0) {
+//                if (parseInt(numberFields[i].value) > 0) {
                     outputField.innerHTML += numberFields[i].id + ": " + numberFields[i].value + "<br>";
-                }
+//                }
             }
             calculatePrice();
         }
