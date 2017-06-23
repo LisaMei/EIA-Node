@@ -329,7 +329,7 @@ namespace Form {
             numberInput.value = "0";
             numberInput.style.display = "inline";
             numberInput.style.width = "30px";
-            numberInput.style.margin = "0px 20px 0px 0px";
+//            numberInput.style.margin = "0px 20px 0px 0px";
             
             flavorField.appendChild(numberInput);
             numberFields.push(numberInput);

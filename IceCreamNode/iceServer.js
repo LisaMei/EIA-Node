@@ -59,10 +59,6 @@ function handleRequest(_request, _response) {
             respond(_response, "unknown command: " + command);
             break;
     }*/
-    let data = {
-        nr: parseInt(Url.parse(_request.url, true).query["nr"]),
-        selection: Url.parse(_request.url, true).query["selection"]
-    };
 }
 function respond(_response, _text) {
     _response.setHeader("Access-Control-Allow-Origin", "*");

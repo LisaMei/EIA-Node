@@ -78,10 +78,7 @@ function handleRequest(_request: http.IncomingMessage, _response: http.ServerRes
     }*/
 
    
-    let data: iceData = {
-        nr: parseInt(Url.parse(_request.url, true).query["nr"]),
-        selection: Url.parse(_request.url, true).query["selection"]
-    };
+ 
 }
 
 
@@ -92,7 +89,3 @@ function respond(_response: http.ServerResponse, _text: string): void {
     _response.end();
 }
 
-interface iceData {
-    nr: number;
-    selection: string;
-}

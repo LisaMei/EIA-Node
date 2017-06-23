@@ -7,6 +7,21 @@ let databaseURL: string = "mongodb://localhost:27017/Test";
 let db: Mongo.Db;
 let iceRequests: Mongo.Collection;
 
+
+interface AssocStringString {
+    [key: string]: string;
+}
+
+interface iceData {
+    nr: number;
+    selection: string;
+}
+//   let data: iceData = {
+//        nr: parseInt(Url.parse(_request.url, true).query["nr"]),
+//        selection: Url.parse(_request.url, true).query["selection"]
+//    };
+
+
 if (process.env.NODE_ENV == "production")
     databaseURL = "mongodb://username:password@hostname:port/database";
 
@@ -14,11 +29,11 @@ Mongo.MongoClient.connect(databaseURL, handleConnect);
 
 function handleConnect(_e: Mongo.MongoError, _db: Mongo.Db): void {
     if (_e)
-        console.log("Unable to connect to database, error: ", _e);
+        console.log("Can't connect to database, error: ", _e);
     else {
         console.log("Connected to database!");
         db = _db;
-        iceRequests = _db.collection("students");
+        iceRequests = _db.collection("iceRequests");
     }
 }
 
@@ -27,7 +42,7 @@ export function insert(_doc: iceData): void {
 }
 
 function handleInsert(_e: Mongo.MongoError): void {
-    console.log("Database insertion returned -> " + _e);
+    console.log("Error! Database insertion returned -> " + _e);
 }
 
 
