@@ -92,8 +92,9 @@ var Form;
             for (let i = 0; i < numberFields.length; i++) {
                 let valueString = numberFields[i].value;
                 scoopNumber += parseInt(valueString);
-                //                if (parseInt(numberFields[i].value) > 0) {
-                outputField.innerHTML += numberFields[i].id + ": " + numberFields[i].value + "<br>";
+                if (parseInt(numberFields[i].value) > 0) {
+                    outputField.innerHTML += numberFields[i].id + ": " + numberFields[i].value + "<br>";
+                }
             }
             calculatePrice();
         }
@@ -282,7 +283,7 @@ var Form;
             numberInput.id = flavors[i];
             numberInput.name = flavors[i];
             numberInput.step = "1";
-            //            numberInput.min = "1";
+            numberInput.min = "0";
             numberInput.max = "5";
             numberInput.value = "0";
             numberInput.style.display = "inline";
