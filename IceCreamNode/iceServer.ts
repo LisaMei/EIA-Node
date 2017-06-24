@@ -1,7 +1,7 @@
 //manages between client and database
 
 import http = require("http"); //imports HTTP module into cache
-import Url = require("url");
+import Url = require("url"); //splits web address into readable parts
 import Database = require("./Database");
 
 interface AssocStringString {
@@ -32,15 +32,15 @@ function handleRequest(_request: http.IncomingMessage, _response: http.ServerRes
     console.log("Request recieved");
     console.log(_request.url);
 
-    let query: AssocStringString = Url.parse(_request.url, true).query;
-    console.log(query);
-    var command: string = query["command"];
+    let query: AssocStringString = Url.parse(_request.url, true).query; //splits string into readable parts, returns URL object with the parts as properties
+    console.log(query); //show whole string in console
+    var command: string = query["command"]; 
     let key: string;
-    for (key in query)
+    for (key in query) //every key is displayed with its value in the console 
     console.log(key + ":" + query[key]);
  
     _response.setHeader("Access-Control-Allow-Origin", "*");
-    _response.setHeader("content-type", "text/html; charset=utf-8");
+    _response.setHeader("content-type", "text/html; charset=utf-8"); //displays server response as HTML
     _response.write("First Name: " + query["FirstName"] +  "<br>");
     _response.write("Last Name: " + query["LastName"]+  "<br>");
     _response.write("Address Line 1: " + query["AddressLine1"]+  "<br>");

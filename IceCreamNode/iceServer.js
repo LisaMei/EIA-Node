@@ -1,7 +1,7 @@
 //manages between client and database
 "use strict";
 const http = require("http"); //imports HTTP module into cache
-const Url = require("url");
+const Url = require("url"); //splits web address into readable parts
 let port = process.env.PORT;
 if (port == undefined)
     port = 8100;
@@ -18,14 +18,14 @@ function handleListen() {
 function handleRequest(_request, _response) {
     console.log("Request recieved");
     console.log(_request.url);
-    let query = Url.parse(_request.url, true).query;
-    console.log(query);
+    let query = Url.parse(_request.url, true).query; //splits string into readable parts, returns URL object with the parts as properties
+    console.log(query); //show whole string in console
     var command = query["command"];
     let key;
     for (key in query)
         console.log(key + ":" + query[key]);
     _response.setHeader("Access-Control-Allow-Origin", "*");
-    _response.setHeader("content-type", "text/html; charset=utf-8");
+    _response.setHeader("content-type", "text/html; charset=utf-8"); //displays server response as HTML
     _response.write("First Name: " + query["FirstName"] + "<br>");
     _response.write("Last Name: " + query["LastName"] + "<br>");
     _response.write("Address Line 1: " + query["AddressLine1"] + "<br>");

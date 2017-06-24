@@ -2,19 +2,19 @@
 "use strict";
 const Mongo = require("mongodb");
 console.log("Database starting");
-let databaseURL = "mongodb://localhost:27017/Test";
 let db;
+let databaseURL = "mongodb://localhost:27017/Test";
 let iceRequests;
+if (process.env.NODE_ENV == "production")
+    databaseURL = "mongodb://username:password@hostname:port/database";
+Mongo.MongoClient.connect(databaseURL, handleConnect);
 //   let data: iceData = {
 //        nr: parseInt(Url.parse(_request.url, true).query["nr"]),
 //        selection: Url.parse(_request.url, true).query["selection"]
 //    };
-if (process.env.NODE_ENV == "production")
-    databaseURL = "mongodb://username:password@hostname:port/database";
-Mongo.MongoClient.connect(databaseURL, handleConnect);
-function handleConnect(_e, _db) {
-    if (_e)
-        console.log("Can't connect to database, error: ", _e);
+function handleConnect(_err, _db) {
+    if (_err)
+        console.log("Can't connect to database, error: ", _err);
     else {
         console.log("Connected to database!");
         db = _db;
