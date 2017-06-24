@@ -1,6 +1,6 @@
 //manages between client and database
 
-import http = require("http");
+import http = require("http"); //imports HTTP module into cache
 import Url = require("url");
 import Database = require("./Database");
 
@@ -12,8 +12,7 @@ let port: number = process.env.PORT;
 if (port == undefined)
     port = 8100;
 
-
-let server: http.Server = http.createServer();
+let server: http.Server = http.createServer(); //creates HTTP server that listsnes to ports 
 server.addListener("listening", handleListen);
 server.addListener("request", handleRequest);
 server.listen(port);
@@ -22,10 +21,12 @@ var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/mydb";
 
 
-
 function handleListen(): void {
     console.log("Server listening on port: " + process.env.port);
 }
+
+
+//incoming message, response are created by the server
 
 function handleRequest(_request: http.IncomingMessage, _response: http.ServerResponse): void {
     console.log("Request recieved");
@@ -33,10 +34,10 @@ function handleRequest(_request: http.IncomingMessage, _response: http.ServerRes
 
     let query: AssocStringString = Url.parse(_request.url, true).query;
     console.log(query);
-     var command: string = query["command"];
+    var command: string = query["command"];
     let key: string;
     for (key in query)
-        console.log(key + ":" + query[key]);
+    console.log(key + ":" + query[key]);
  
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8");
@@ -51,18 +52,18 @@ function handleRequest(_request: http.IncomingMessage, _response: http.ServerRes
     _response.write("Vanilla: " + query["Vanilla"]+  "<br>");
     _response.write("Cinnamon: " + query["Cinnamon"]+  "<br>");
     _response.write("Lemon: " + query["Lemon"]+  "<br>");
-     _response.write("Stracciatella: " + query["Stracciatella"]+  "<br>");
+    _response.write("Stracciatella: " + query["Stracciatella"]+  "<br>");
     _response.write("Walnut: " + query["Walnut"]+  "<br>");
     _response.end();
    
+    
+    //switch statement for filling the database with data
     
     /*switch (command) {
         case "insert":
             let iceRequest: iceData = {
                 nr: parseInt(query["numberInput"]),
                 selection: query["firstname"],
-                
-                
             };
             Database.insert(iceRequest);
             respond(_response, "storing data");
@@ -76,14 +77,11 @@ function handleRequest(_request: http.IncomingMessage, _response: http.ServerRes
             respond(_response, "unknown command: " + command);
             break;
     }*/
-
-   
- 
-}
+} //handleRequest end tag
 
 
 function respond(_response: http.ServerResponse, _text: string): void {
-    _response.setHeader("Access-Control-Allow-Origin", "*");
+    _response.setHeader("Access-Control-Allow-Origin", "*"); //allows all domains
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.write(_text);
     _response.end();

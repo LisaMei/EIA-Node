@@ -1,11 +1,11 @@
 //manages between client and database
 "use strict";
-const http = require("http");
+const http = require("http"); //imports HTTP module into cache
 const Url = require("url");
 let port = process.env.PORT;
 if (port == undefined)
     port = 8100;
-let server = http.createServer();
+let server = http.createServer(); //creates HTTP server that listsnes to ports 
 server.addListener("listening", handleListen);
 server.addListener("request", handleRequest);
 server.listen(port);
@@ -14,6 +14,7 @@ var url = "mongodb://localhost:27017/mydb";
 function handleListen() {
     console.log("Server listening on port: " + process.env.port);
 }
+//incoming message, response are created by the server
 function handleRequest(_request, _response) {
     console.log("Request recieved");
     console.log(_request.url);
@@ -39,13 +40,12 @@ function handleRequest(_request, _response) {
     _response.write("Stracciatella: " + query["Stracciatella"] + "<br>");
     _response.write("Walnut: " + query["Walnut"] + "<br>");
     _response.end();
+    //switch statement for filling the database with data
     /*switch (command) {
         case "insert":
             let iceRequest: iceData = {
                 nr: parseInt(query["numberInput"]),
                 selection: query["firstname"],
-                
-                
             };
             Database.insert(iceRequest);
             respond(_response, "storing data");
@@ -59,9 +59,9 @@ function handleRequest(_request, _response) {
             respond(_response, "unknown command: " + command);
             break;
     }*/
-}
+} //handleRequest end tag
 function respond(_response, _text) {
-    _response.setHeader("Access-Control-Allow-Origin", "*");
+    _response.setHeader("Access-Control-Allow-Origin", "*"); //allows all domains
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.write(_text);
     _response.end();
