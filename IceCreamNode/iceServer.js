@@ -32,6 +32,8 @@ function handleRequest(_request, _response) {
     _response.write("Address Line 2: " + query["AddressLine2"] + "<br>");
     _response.write("Town/City: " + query["Town/City"] + "<br>");
     _response.write("Postal Code: " + query["PostalCode"] + "<br>");
+    _response.write("SELECTION" + "<hr>");
+    _response.write("containerChoice: " + query["containerChoice"] + "<br>");
     _response.write("Chocolate: " + query["Chocolate"] + "<br>");
     _response.write("Strawberry: " + query["Strawberry"] + "<br>");
     _response.write("Vanilla: " + query["Vanilla"] + "<br>");
@@ -39,7 +41,7 @@ function handleRequest(_request, _response) {
     _response.write("Lemon: " + query["Lemon"] + "<br>");
     _response.write("Stracciatella: " + query["Stracciatella"] + "<br>");
     _response.write("Walnut: " + query["Walnut"] + "<br>");
-    _response.write("containerChoice: " + query["containerChoice"] + "<br>");
+    _response.write("Toppings: " + query["toppingCheckbox"] + "<br>");
     _response.end();
     //switch statement for filling the database with data
     /*switch (command) {
