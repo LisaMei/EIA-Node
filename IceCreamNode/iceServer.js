@@ -39,6 +39,7 @@ function handleRequest(_request, _response) {
     _response.write("Lemon: " + query["Lemon"] + "<br>");
     _response.write("Stracciatella: " + query["Stracciatella"] + "<br>");
     _response.write("Walnut: " + query["Walnut"] + "<br>");
+    _response.write("containerChoice: " + query["containerChoice"] + "<br>");
     _response.end();
     //switch statement for filling the database with data
     /*switch (command) {

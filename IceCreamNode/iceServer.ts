@@ -54,6 +54,8 @@ function handleRequest(_request: http.IncomingMessage, _response: http.ServerRes
     _response.write("Lemon: " + query["Lemon"]+  "<br>");
     _response.write("Stracciatella: " + query["Stracciatella"]+  "<br>");
     _response.write("Walnut: " + query["Walnut"]+  "<br>");
+    _response.write("containerChoice: " + query["containerChoice"]+  "<br>");
+    
     _response.end();
    
     
