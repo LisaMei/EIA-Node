@@ -42,7 +42,7 @@ function handleRequest(_request, _response) {
     _response.write("Lemon: " + query["Lemon"] + "<br>");
     _response.write("Stracciatella: " + query["Stracciatella"] + "<br>");
     _response.write("Walnut: " + query["Walnut"] + "<br>");
-    _response.write("Toppings: " + query["toppingCheckbox"] + "<hr>" + "<br>");
+    _response.write("Toppings: " + query["toppingCheckbox"] + "<hr>");
     _response.write("SHIPPING: " + "<br>" + "<br>");
     _response.write("Delivery: " + query["Delivery"] + "<br>");
     _response.end();
