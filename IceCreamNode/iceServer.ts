@@ -39,16 +39,19 @@ function handleRequest(_request: http.IncomingMessage, _response: http.ServerRes
     for (key in query) //every key is displayed with its value in the console 
     console.log(key + ":" + query[key]);
  
+    
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8"); //displays server response as HTML
+   
+    _response.write("CUSTOMER INFO" );
     _response.write("First Name: " + query["FirstName"] +  "<br>");
     _response.write("Last Name: " + query["LastName"]+  "<br>");
     _response.write("Address Line 1: " + query["AddressLine1"]+  "<br>");
     _response.write("Address Line 2: " + query["AddressLine2"]+  "<br>");
     _response.write("Town/City: " + query["Town/City"]+  "<br>");
-    _response.write("Postal Code: " + query["PostalCode"]+  "<br>");
-    _response.write("SELECTION" + "<hr>");
-    _response.write("containerChoice: " + query["containerChoice"]+  "<br>");
+    _response.write("Postal Code: " + query["PostalCode"]+  "<br>" + "<hr>");
+    _response.write("SELECTION" );
+    _response.write("Container: " + query["containerChoice"]+  "<br>");
     _response.write("Chocolate: " + query["Chocolate"]+  "<br>");
     _response.write("Strawberry: " + query["Strawberry"]+  "<br>");
     _response.write("Vanilla: " + query["Vanilla"]+  "<br>");
