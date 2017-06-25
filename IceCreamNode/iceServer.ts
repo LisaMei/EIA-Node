@@ -59,7 +59,7 @@ function handleRequest(_request: http.IncomingMessage, _response: http.ServerRes
     _response.write("Lemon: " + query["Lemon"]+  "<br>");
     _response.write("Stracciatella: " + query["Stracciatella"]+  "<br>");
     _response.write("Walnut: " + query["Walnut"]+  "<br>");
-    _response.write("Toppings: " + query["toppingCheckbox"]+  "<br>");
+    _response.write("Toppings: " + query["toppingCheckbox"]+ "<hr>" + "<br>");
     _response.write("SHIPPING: " + "<br>"+ "<br>");
     _response.write("Delivery: " + query["Delivery"]+  "<br>");
     
