@@ -26,7 +26,7 @@ function handleRequest(_request, _response) {
         console.log(key + ":" + query[key]);
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8"); //displays server response as HTML
-    _response.write("CUSTOMER INFO");
+    _response.write("CUSTOMER INFO" + "<br>");
     _response.write("First Name: " + query["FirstName"] + "<br>");
     _response.write("Last Name: " + query["LastName"] + "<br>");
     _response.write("Address Line 1: " + query["AddressLine1"] + "<br>");
