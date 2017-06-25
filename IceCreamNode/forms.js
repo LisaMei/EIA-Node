@@ -57,13 +57,13 @@ var Form;
             for (let i = 0; i < inputFields.length; i++) {
                 let image = document.getElementById("checkImg");
                 if (inputFields[i].checkValidity() == false) {
-                    image.src = "wrong.png";
+                    image.src = "Images/wrong.png";
                     console.log("false");
                     image.style.display = "inline";
                     inputFields[i].style.backgroundColor = "#fe8181";
                 }
                 else {
-                    image.src = "checked.png";
+                    image.src = "Images/checked.png";
                     console.log("true");
                     image.style.display = "inline";
                     inputFields[i].style.backgroundColor = "#c0c0c0";
