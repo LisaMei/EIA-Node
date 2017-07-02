@@ -37,15 +37,14 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
             respond(_response, "storing data");
             break;
         case "find":
-        //
             Database.findAll(function(json: string): void { //findAll alles zurückgeben
                 respond(_response, json);
             });
             break;
-            case "find":
-//            Database.findOne(["matrikel":number], callback:MongoCallback):void{
-//                respond(_response, json);
-//            };
+            case "search":
+            Database.findOne("matrikel":number): void{
+                respond(_response);
+            };
             break;
         default:
             respond(_response, "unknown command: " + command);

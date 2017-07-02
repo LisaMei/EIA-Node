@@ -1,7 +1,7 @@
 //Simple database insertion and query for MongoDB
 "use strict";
 const Mongo = require("mongodb");
-console.log("Database starting LOLOLOLOL");
+console.log("Database starting");
 let databaseURL = "mongodb://localhost:27017/Test";
 let db;
 let students;

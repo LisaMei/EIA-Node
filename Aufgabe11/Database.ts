@@ -1,7 +1,7 @@
 //Simple database insertion and query for MongoDB
 
 import Mongo = require("mongodb");
-console.log("Database starting LOLOLOLOL");
+console.log("Database starting");
 
 let databaseURL: string = "mongodb://localhost:27017/Test";
 let db: Mongo.Db;
