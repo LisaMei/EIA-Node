@@ -29,15 +29,16 @@ function handleRequest(_request, _response) {
             respond(_response, "storing data");
             break;
         case "find":
-            //
             Database.findAll(function (json) {
                 respond(_response, json);
             });
             break;
-        case "find":
-            //            Database.findOne(["matrikel":number], callback:MongoCallback):void{
-            //                respond(_response, json);
-            //            };
+        case "search":
+            if (query["matrikel"] == "") {
+                Database.findAll(function (json) {
+                    respond(_response, json);
+                });
+            }
             break;
         default:
             respond(_response, "unknown command: " + command);

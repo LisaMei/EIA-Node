@@ -42,9 +42,11 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
             });
             break;
             case "search":
-            Database.findOne("matrikel":number): void{
-                respond(_response);
-            };
+             if (query["matrikel"] == "") {
+                Database.findAll(function(json: string): void {
+                    respond(_response, json);
+                });
+                 }
             break;
         default:
             respond(_response, "unknown command: " + command);
